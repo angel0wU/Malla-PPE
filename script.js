@@ -1,67 +1,110 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const selectedOptions = new Set();
+document.addEventListener("DOMContentLoaded", function () {
+  const allCourses = document.querySelectorAll(".course");
+  const takenCourses = new Set();
 
-  function updatePrerequisites() {
-    document.querySelectorAll('[data-id]').forEach(course => {
-      const prereqs = course.dataset.prereq?.split(" ") || [];
-      const isUnlocked = prereqs.every(id => selectedOptions.has(id));
-      course.classList.toggle("disabled", !isUnlocked);
+  // Manejar checkboxes
+  document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        takenCourses.add(checkbox.id);
+      } else {
+        takenCourses.delete(checkbox.id);
+      }
+      updateCourseStates();
     });
-  }
+  });
 
-  function setupSelectableCourses() {
-    document.querySelectorAll(".grupo").forEach(group => {
-      const radios = group.querySelectorAll("li");
-      radios.forEach(option => {
-        option.style.cursor = "pointer";
-        option.addEventListener("click", () => {
-          if (option.classList.contains("disabled")) return;
+  // Manejar selects únicos (por ejemplo, Filosofía vs Teología)
+  document.querySelectorAll("select[data-group]").forEach((select) => {
+    select.addEventListener("change", () => {
+      // Marcar lo elegido como tomado
+      takenCourses.add(select.value);
+      updateCourseStates();
+    });
+  });
 
-          const selectedId = option.dataset.id;
-
-          // Desmarcar todos en el grupo
-          radios.forEach(o => o.classList.remove("selected"));
-          option.classList.add("selected");
-
-          // Registrar selección
-          [...radios].forEach(o => selectedOptions.delete(o.dataset.id));
-          selectedOptions.add(selectedId);
-
-          // Desactivar esta opción en otros grupos del mismo tipo
-          const groupName = group.dataset.group;
-          document.querySelectorAll(`.grupo[data-group='${groupName}']`).forEach(gr => {
-            gr.querySelectorAll("li").forEach(o => {
-              if (o.dataset.id === selectedId && !o.classList.contains("selected")) {
-                o.classList.add("disabled");
-              } else {
-                o.classList.remove("disabled");
-              }
-            });
-          });
-
-          updatePrerequisites();
+  function updateCourseStates() {
+    allCourses.forEach((course) => {
+      const prereq = course.dataset.prereq;
+      if (prereq) {
+        const required = prereq.split(",");
+        const fulfilled = required.every((r) => takenCourses.has(r.trim()));
+        course.classList.toggle("disabled", !fulfilled);
+        course.querySelectorAll("input, select").forEach((el) => {
+          el.disabled = !fulfilled;
         });
+      }
+    });
+
+    // Manejo de selección única
+    const grouped = document.querySelectorAll("select[data-group]");
+    const used = new Set();
+    grouped.forEach((select) => {
+      used.add(select.value);
+    });
+    grouped.forEach((select) => {
+      const group = select.dataset.group;
+      const current = select.value;
+      Array.from(select.options).forEach((opt) => {
+        opt.disabled = opt.value !== current && used.has(opt.value);
       });
     });
   }
 
-  function setupNormalCourses() {
-    document.querySelectorAll(".ciclo > ul > li[data-id]").forEach(course => {
-      course.addEventListener("click", () => {
-        if (course.classList.contains("disabled")) return;
-        course.classList.toggle("selected");
-        const id = course.dataset.id;
-        if (selectedOptions.has(id)) {
-          selectedOptions.delete(id);
-        } else {
-          selectedOptions.add(id);
-        }
-        updatePrerequisites();
+  updateCourseStates(); // Ejecutar al cargar
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const allCourses = document.querySelectorAll(".course");
+  const takenCourses = new Set();
+
+  // Manejar checkboxes
+  document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        takenCourses.add(checkbox.id);
+      } else {
+        takenCourses.delete(checkbox.id);
+      }
+      updateCourseStates();
+    });
+  });
+
+  // Manejar selects únicos (por ejemplo, Filosofía vs Teología)
+  document.querySelectorAll("select[data-group]").forEach((select) => {
+    select.addEventListener("change", () => {
+      // Marcar lo elegido como tomado
+      takenCourses.add(select.value);
+      updateCourseStates();
+    });
+  });
+
+  function updateCourseStates() {
+    allCourses.forEach((course) => {
+      const prereq = course.dataset.prereq;
+      if (prereq) {
+        const required = prereq.split(",");
+        const fulfilled = required.every((r) => takenCourses.has(r.trim()));
+        course.classList.toggle("disabled", !fulfilled);
+        course.querySelectorAll("input, select").forEach((el) => {
+          el.disabled = !fulfilled;
+        });
+      }
+    });
+
+    // Manejo de selección única
+    const grouped = document.querySelectorAll("select[data-group]");
+    const used = new Set();
+    grouped.forEach((select) => {
+      used.add(select.value);
+    });
+    grouped.forEach((select) => {
+      const group = select.dataset.group;
+      const current = select.value;
+      Array.from(select.options).forEach((opt) => {
+        opt.disabled = opt.value !== current && used.has(opt.value);
       });
     });
   }
 
-  setupNormalCourses();
-  setupSelectableCourses();
-  updatePrerequisites();
+  updateCourseStates(); // Ejecutar al cargar
 });
