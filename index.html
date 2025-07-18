@@ -1,102 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Malla Curricular PFE</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Malla Curricular de Política, Filosofía y Economía (PFE)</h1>
+  <h1>Malla Curricular de Política, Filosofía y Economía</h1>
   <div class="malla">
-    <!-- Ciclos 0 al 10 -->
-    <div class="ciclo" id="ciclo-0">
+    <!-- CICLOS 0 AL 10 -->
+    <!-- Cada curso tiene ID único y prerrequisitos como data-prerequisitos -->
+    
+    <!-- CICLO 0 -->
+    <section class="ciclo" id="ciclo-0">
       <h2>Ciclo 0</h2>
-      <div class="curso" data-id="HUM0">Nivelación en Lenguaje (HUM 0)</div>
-      <div class="curso" data-id="ECO0">Nivelación en Matemáticas (ECO 0)</div>
-      <div class="curso" data-id="ING0">Nivelación en Informáticos (ING 0)</div>
-    </div>
+      <div class="curso" data-id="nivel-lenguaje">Nivelación en Lenguaje (HUM 0)</div>
+      <div class="curso" data-id="nivel-matematicas">Nivelación en Matemáticas (ECO 0)</div>
+      <div class="curso" data-id="nivel-informatica">Nivelación en Informática (ING 0)</div>
+    </section>
 
-    <div class="ciclo" id="ciclo-1">
+    <!-- CICLO 1 -->
+    <section class="ciclo" id="ciclo-1">
       <h2>Ciclo 1</h2>
-      <div class="curso" data-id="ECO5-1" data-prerequisitos="ECO0">Matemáticas I (ECO 5)</div>
-      <div class="curso" data-id="ECO5-2" data-prerequisitos="ECO0">Economía General I (ECO 5)</div>
-      <div class="curso" data-id="CON4">Fundamentos de Contabilidad (CON 4)</div>
-      <div class="curso" data-id="HUM4-1" data-prerequisitos="HUM0">Lenguaje I (HUM 4)</div>
-      <div class="curso" data-id="HUM4-2">Introducción a la Política, Filosofía y Economía (HUM 4)</div>
-    </div>
+      <div class="curso" data-id="mate1" data-prerequisitos="nivel-matematicas">Matemáticas I (ECO 5)</div>
+      <div class="curso" data-id="eco1" data-prerequisitos="nivel-matematicas">Economía General I (ECO 5)</div>
+      <div class="curso" data-id="conta">Fundamentos de Contabilidad (CON 4)</div>
+      <div class="curso" data-id="lenguaje1" data-prerequisitos="nivel-lenguaje">Lenguaje I (HUM 4)</div>
+      <div class="curso" data-id="intro-pfe">Introducción a la Política, Filosofía y Economía (HUM 4)</div>
+    </section>
 
-    <div class="ciclo" id="ciclo-2">
+    <!-- CICLO 2 -->
+    <section class="ciclo" id="ciclo-2">
       <h2>Ciclo 2</h2>
-      <div class="curso" data-id="CCSS4-1">Poder e Instituciones (CCSS 4)</div>
-      <div class="curso" data-id="HUM4-3">Antropología Filosófica (HUM 4)</div>
-      <div class="curso" data-id="HUM4-4" data-prerequisitos="HUM4-1">Lenguaje II (HUM 4)</div>
-      <div class="curso" data-id="CCSS4-2">Curso 1 de Pensamiento Crítico (CCSS/HUM 4)</div>
-      <div class="curso" data-id="CCSS4-3">Curso 1 de Ciencias Sociales (CCSS 4)</div>
-    </div>
+      <div class="curso" data-id="poder">Poder e Instituciones (CCSS 4)</div>
+      <div class="curso" data-id="antro-filo">Antropología Filosófica (HUM 4)</div>
+      <div class="curso" data-id="lenguaje2" data-prerequisitos="lenguaje1">Lenguaje II (HUM 4)</div>
+      <div class="curso" data-id="pensamiento1">Curso 1 de Pensamiento Crítico (HUM/CCSS 4)</div>
+      <div class="curso" data-id="ccss1">Curso 1 de Ciencias Sociales (CCSS 4)</div>
+    </section>
 
-    <div class="ciclo" id="ciclo-3">
+    <!-- CICLO 3 -->
+    <section class="ciclo" id="ciclo-3">
       <h2>Ciclo 3</h2>
-      <div class="curso" data-id="ECO5-3" data-prerequisitos="ECO5-1">Matemáticas II (ECO 5)</div>
-      <div class="curso" data-id="ECO5-4" data-prerequisitos="ECO5-2">Economía General II (ECO 5)</div>
-      <div class="curso" data-id="CCSS4-4" data-prerequisitos="CCSS4-1">Política Comparada (CCSS 4)</div>
-      <div class="curso" data-id="CCSS3">Investigación Académica (CCSS 3)</div>
-      <div class="curso" data-id="CCSS4-5" data-prerequisitos="HUM4-4">Curso 1 de Procesos Sociales (CCSS/HUM 4)</div>
-    </div>
+      <div class="curso" data-id="mate2" data-prerequisitos="mate1">Matemáticas II (ECO 5)</div>
+      <div class="curso" data-id="eco2" data-prerequisitos="eco1">Economía General II (ECO 5)</div>
+      <div class="curso" data-id="polcomp" data-prerequisitos="poder">Política Comparada (CCSS 4)</div>
+      <div class="curso" data-id="inv-acad">Investigación Académica (CCSS 3)</div>
+      <div class="curso" data-id="procsoc1" data-prerequisitos="lenguaje2">Curso 1 del bloque de Procesos Sociales (CCSS/HUM)</div>
+    </section>
 
-    <div class="ciclo" id="ciclo-4">
+    <!-- CICLO 4 -->
+    <section class="ciclo" id="ciclo-4">
       <h2>Ciclo 4</h2>
-      <div class="curso" data-id="ECO4-1" data-prerequisitos="ECO5-1, ING0">Estadística I (ECO 4)</div>
-      <div class="curso" data-id="ECO5-5" data-prerequisitos="ECO5-2, ECO5-3">Microeconomía I (ECO 5)</div>
-      <div class="curso" data-id="CCSS4-6" data-prerequisitos="CCSS4-4">Ciudadanía y Democratización (CCSS 4)</div>
-      <div class="curso" data-id="DER5">Introducción al Derecho (DER 5)</div>
-      <div class="curso" data-id="HUM4-5" data-prerequisitos="HUM4-3">Filosofía Política (HUM 4)</div>
-    </div>
+      <div class="curso" data-id="estad1" data-prerequisitos="mate1,nivel-informatica">Estadística I (ECO 4)</div>
+      <div class="curso" data-id="micro1" data-prerequisitos="eco1,mate2">Microeconomía I (ECO 5)</div>
+      <div class="curso" data-id="ciudad" data-prerequisitos="polcomp">Ciudadanía y Democratización (CCSS 4)</div>
+      <div class="curso" data-id="derecho">Introducción al Derecho (DER 5)</div>
+      <div class="curso" data-id="filopoli" data-prerequisitos="antro-filo">Filosofía Política (HUM 4)</div>
+    </section>
 
-    <div class="ciclo" id="ciclo-5">
+    <!-- CICLO 5 -->
+    <section class="ciclo" id="ciclo-5">
       <h2>Ciclo 5</h2>
-      <div class="curso" data-id="ECO5-6" data-prerequisitos="ECO4-1, ECO5-3">Econometría Aplicada (ECO 5)</div>
-      <div class="curso" data-id="ECO5-7" data-prerequisitos="ECO5-4, ECO5-5">Macroeconomía de Corto Plazo (ECO 5)</div>
-      <div class="curso" data-id="CCSS4-7" data-prerequisitos="CCSS4-4">Economía Política Internacional (CCSS 4)</div>
-      <div class="curso" data-id="HUM4-6">Curso Introductorio a la Ciencia (HUM/ING 4)</div>
-    </div>
+      <div class="curso" data-id="econometria" data-prerequisitos="estad1,mate2">Econometría aplicada (ECO 5)</div>
+      <div class="curso" data-id="macro-corto" data-prerequisitos="eco2,micro1">Macroeconomía de Corto Plazo (ECO 5)</div>
+      <div class="curso" data-id="epi" data-prerequisitos="polcomp">Economía Política Internacional (CCSS 4)</div>
+      <div class="curso" data-id="quehacer">Curso bloque Introducción al quehacer científico (HUM/ING 4)</div>
+    </section>
 
-    <div class="ciclo" id="ciclo-6">
+    <!-- CICLO 6 -->
+    <section class="ciclo" id="ciclo-6">
       <h2>Ciclo 6</h2>
-      <div class="curso" data-id="ECO5-8" data-prerequisitos="ECO5-5, ECO4-1">Microeconomía Aplicada (ECO 5)</div>
-      <div class="curso" data-id="ECO4-2" data-prerequisitos="ECO5-5">Gestión de Recursos Naturales (ECO 4)</div>
-      <div class="curso" data-id="HUM4-7" data-prerequisitos="HUM4-5, DER5">Fund. Filosóficos de los Derechos Humanos (HUM 4)</div>
-      <div class="curso" data-id="CCSS4-8" data-prerequisitos="CCSS3, HUM4-2">Métodos Mixtos de Investigación (CCSS)</div>
-    </div>
+      <div class="curso" data-id="micro-aplicada" data-prerequisitos="micro1,estad1">Microeconomía Aplicada (ECO 5)</div>
+      <div class="curso" data-id="grn" data-prerequisitos="micro1">Gestión de los Recursos Naturales (ECO 4)</div>
+      <div class="curso" data-id="fund-ddhh" data-prerequisitos="filopoli,derecho">Fund. Filosóficos DDHH (HUM 4)</div>
+      <div class="curso" data-id="metodos" data-prerequisitos="inv-acad,intro-pfe">Métodos Mixtos (CCSS)</div>
+    </section>
 
-    <div class="ciclo" id="ciclo-7">
+    <!-- CICLO 7 -->
+    <section class="ciclo" id="ciclo-7">
       <h2>Ciclo 7</h2>
-      <div class="curso" data-id="ECO4-3" data-prerequisitos="ECO5-8">Teoría del Comercio Internacional (ECO 4)</div>
-      <div class="curso" data-id="ECO5-9" data-prerequisitos="ECO5-8">Diseño, Evaluación y Gestión de Proyectos (ECO 5)</div>
-      <div class="curso" data-id="CCSS4-9">Curso 2 de Pensamiento Crítico (CCSS/HUM 4)</div>
-      <div class="curso" data-id="CCSS4-10" data-prerequisitos="HUM4-4">Curso 2 de Procesos Sociales (CCSS/HUM 4)</div>
-    </div>
+      <div class="curso" data-id="comercio-int" data-prerequisitos="micro-aplicada">Teoría del Comercio Int. (ECO 4)</div>
+      <div class="curso" data-id="proyectos" data-prerequisitos="micro-aplicada">Diseño y Gestión de Proyectos (ECO 5)</div>
+      <div class="curso" data-id="pensamiento2">Curso 2 de Pensamiento Crítico (HUM/CCSS 4)</div>
+      <div class="curso" data-id="procsoc2" data-prerequisitos="lenguaje2">Curso 2 del bloque de Procesos Sociales (CCSS/HUM)</div>
+    </section>
 
-    <div class="ciclo" id="ciclo-8">
+    <!-- CICLO 8 -->
+    <section class="ciclo" id="ciclo-8">
       <h2>Ciclo 8</h2>
-      <div class="curso" data-id="ECO5-10" data-prerequisitos="ECO5-7">Crecimiento e Instituciones (ECO 5)</div>
-      <div class="curso" data-id="CCSS4-11">Debates sobre Política y Desarrollo (CCSS 4)</div>
-      <div class="curso" data-id="HUM4-8">Debates en Filosofía (HUM 4)</div>
-      <div class="curso" data-id="HUM4-9" data-prerequisitos="HUM4-7">Fund. Filosóficos de la Economía (HUM 4)</div>
-    </div>
+      <div class="curso" data-id="crecimiento" data-prerequisitos="macro-corto">Crecimiento e Instituciones (ECO 5)</div>
+      <div class="curso" data-id="debates-poli">Debates sobre Política y Desarrollo (CCSS 4)</div>
+      <div class="curso" data-id="debates-filo">Debates en Filosofía (HUM 4)</div>
+      <div class="curso" data-id="fund-filo-eco" data-prerequisitos="fund-ddhh">Fund. Filosóficos de la Economía (HUM 4)</div>
+    </section>
 
-    <div class="ciclo" id="ciclo-9">
+    <!-- CICLO 9 -->
+    <section class="ciclo" id="ciclo-9">
       <h2>Ciclo 9</h2>
-      <div class="curso" data-id="ECO4-4" data-prerequisitos="ECO5-10">Historia del Pensamiento Económico (ECO 4)</div>
-      <div class="curso" data-id="CCSS4-12">Proyección Social (CCSS 4)</div>
-      <div class="curso" data-id="HUM4-10">Ética (HUM 4)</div>
-    </div>
+      <div class="curso" data-id="historia-pensamiento" data-prerequisitos="crecimiento">Historia del Pensamiento Económico (ECO 4)</div>
+      <div class="curso" data-id="proyeccion">Proyección Social (CCSS 4)</div>
+      <div class="curso" data-id="etica">Ética (HUM 4)</div>
+    </section>
 
-    <div class="ciclo" id="ciclo-10">
+    <!-- CICLO 10 -->
+    <section class="ciclo" id="ciclo-10">
       <h2>Ciclo 10</h2>
-      <div class="curso" data-id="ECO2" data-prerequisitos="CCSS4-8">Seminario de Investigación Aplicada PFE (ECO 2)</div>
-      <div class="curso" data-id="HUM4-11">Curso de Desarrollo Personal (ADM/HUM 4)</div>
-    </div>
+      <div class="curso" data-id="investigacion-pfe" data-prerequisitos="metodos">Seminario de Investigación Aplicada PFE (ECO 2)</div>
+      <div class="curso" data-id="desarrollo-personal">Curso de Desarrollo Personal (ADM/HUM 4)</div>
+    </section>
+
   </div>
 
   <script src="script.js"></script>
