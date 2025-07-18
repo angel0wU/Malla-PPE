@@ -1,65 +1,54 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #e8f9f9;
+  background-color: #e8f8f5;
   color: #333;
   padding: 20px;
 }
 
 h1 {
+  color: #1abc9c;
   text-align: center;
-  color: #007d8a;
-  margin-bottom: 30px;
 }
 
-.malla {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.ciclo {
-  background-color: #d1f2eb;
-  border: 2px solid #7cd3bd;
+.cycle {
+  border: 2px solid #76d7c4;
   border-radius: 12px;
   padding: 16px;
+  margin-bottom: 20px;
+  background-color: #d1f2eb;
 }
 
-.ciclo h2 {
-  text-align: center;
-  color: #117864;
-  margin-bottom: 12px;
+.cycle h2 {
+  color: #148f77;
+  margin-bottom: 10px;
 }
 
-.ciclo ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.ciclo li {
+.course {
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  border-left: 4px solid #1abc9c;
   background-color: #ffffff;
-  border: 1px solid #b2dfdb;
-  border-radius: 8px;
-  padding: 8px 12px;
-  margin: 6px 0;
-  cursor: pointer;
-  transition: background 0.2s ease;
+  border-radius: 6px;
+  font-size: 15px;
 }
 
-.ciclo li.selected {
-  background-color: #a5f3eb;
-  border: 2px solid #00bfa5;
-  font-weight: bold;
+select,
+input[type="checkbox"] {
+  margin-left: 8px;
+  padding: 4px;
+  font-size: 14px;
 }
 
-.ciclo li.disabled {
+select:disabled,
+input[type="checkbox"]:disabled + label {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.course.disabled {
   background-color: #f0f0f0;
-  color: #999;
-  border: 1px dashed #ccc;
-  cursor: not-allowed;
+  color: #888;
+  border-left: 4px solid #ccc;
 }
 
-.grupo li::before {
-  content: \"● \";
-  color: #2e8b57;
-}
 
