@@ -9,9 +9,175 @@
 <body>
   <h1>Malla Curricular Interactiva – PPE</h1>
   <div class="malla">
-    <!-- Los ciclos están organizados aquí -->
-    <!-- Ya se incluyó todo desde el ciclo 0 hasta el 10 con prerrequisitos y grupos de selección única -->
-    <!-- Si quieres que vuelva a mostrar aquí el contenido de los ciclos en HTML, solo dime “muéstrame el index completo” -->
+    <!-- CICLO 0 -->
+    <section class="ciclo" data-ciclo="0">
+      <h2>Ciclo 0</h2>
+      <ul>
+        <li data-id="niv-leng">Nivelación en Lenguaje (HUM, 0 cr.)</li>
+        <li data-id="niv-mate">Nivelación en Matemáticas (ECO, 0 cr.)</li>
+        <li data-id="niv-info">Nivelación en Informática (ING, 0 cr.)</li>
+      </ul>
+    </section>
+
+    <!-- CICLO 1 -->
+    <section class="ciclo" data-ciclo="1">
+      <h2>Ciclo 1</h2>
+      <ul>
+        <li data-id="mate1" data-prereq="niv-mate">Matemáticas I (ECO, 5 cr.)</li>
+        <li data-id="eco1" data-prereq="niv-mate">Economía General I (ECO, 5 cr.)</li>
+        <li data-id="conta">Fundamentos de Contabilidad (CON, 4 cr.)</li>
+        <li data-id="leng1" data-prereq="niv-leng">Lenguaje I (HUM, 4 cr.)</li>
+        <li data-id="intro-pfe">Introducción a la Política, Filosofía y Economía (HUM, 4 cr.)</li>
+      </ul>
+    </section>
+
+    <!-- CICLO 2 -->
+    <section class="ciclo" data-ciclo="2">
+      <h2>Ciclo 2</h2>
+      <ul>
+        <li data-id="poder">Poder e Instituciones (CCSS, 4 cr.)</li>
+        <li data-id="antro-filo">Antropología Filosófica (HUM, 4 cr.)</li>
+        <li data-id="leng2" data-prereq="leng1">Lenguaje II (HUM, 4 cr.)</li>
+        <li class="grupo" data-group="pens-critico">
+          Curso 1 de Pensamiento Crítico (CCSS/HUM, 4 cr.)
+          <ul>
+            <li data-id="filo1">Filosofía</li>
+            <li data-id="teo1">Teología de las Religiones</li>
+            <li data-id="pens1">Pensamiento Social Contemporáneo</li>
+          </ul>
+        </li>
+        <li class="grupo" data-group="ciencias-sociales">
+          Curso 1 de Ciencias Sociales (CCSS, 4 cr.)
+          <ul>
+            <li data-id="socio1">Sociología</li>
+            <li data-id="psico1">Psicología</li>
+            <li data-id="antro1">Antropología</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CICLO 3 -->
+    <section class="ciclo" data-ciclo="3">
+      <h2>Ciclo 3</h2>
+      <ul>
+        <li data-id="mate2" data-prereq="mate1">Matemáticas II (ECO, 5 cr.)</li>
+        <li data-id="eco2" data-prereq="eco1">Economía General II (ECO, 5 cr.)</li>
+        <li data-id="polcomp" data-prereq="poder">Política Comparada (CCSS, 4 cr.)</li>
+        <li data-id="invacad">Investigación Académica (CCSS, 3 cr.)</li>
+        <li class="grupo" data-group="procesos-sociales" data-prereq="leng2">
+          Curso 1 del bloque Procesos Sociales (CCSS/HUM, 4 cr.)
+          <ul>
+            <li data-id="cpol1">Ciencia Política</li>
+            <li data-id="heemp1">Historia Económica y Empresarial</li>
+            <li data-id="hcrit1">Historia Crítica del Perú</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CICLO 4 -->
+    <section class="ciclo" data-ciclo="4">
+      <h2>Ciclo 4</h2>
+      <ul>
+        <li data-id="estad1" data-prereq="mate1 niv-info">Estadística I (ECO, 4 cr.)</li>
+        <li data-id="micro1" data-prereq="eco1 mate2">Microeconomía I (ECO, 5 cr.)</li>
+        <li data-id="ciudadania" data-prereq="polcomp">Ciudadanía y Democratización (CCSS, 4 cr.)</li>
+        <li data-id="der">Introducción al Derecho (DER, 5 cr.)</li>
+        <li data-id="filopoli" data-prereq="antro-filo">Filosofía Política (HUM, 4 cr.)</li>
+      </ul>
+    </section>
+
+    <!-- CICLO 5 -->
+    <section class="ciclo" data-ciclo="5">
+      <h2>Ciclo 5</h2>
+      <ul>
+        <li data-id="ecomet" data-prereq="estad1 mate2">Econometría Aplicada (ECO, 5 cr.)</li>
+        <li data-id="macro" data-prereq="eco2 micro1">Macroeconomía de Corto Plazo (ECO, 5 cr.)</li>
+        <li data-id="epint" data-prereq="polcomp">Economía Política Internacional (CCSS, 4 cr.)</li>
+        <li class="grupo" data-group="cientifico">
+          Curso bloque Introducción al quehacer científico (HUM/ING, 4 cr.)
+          <ul>
+            <li data-id="histcie">Historia y Filosofía de la Ciencia</li>
+            <li data-id="cosmo">Introducción a la Cosmología</li>
+            <li data-id="sistem">Pensamiento Sistémico</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CICLO 6 -->
+    <section class="ciclo" data-ciclo="6">
+      <h2>Ciclo 6</h2>
+      <ul>
+        <li data-id="microapp" data-prereq="micro1 estad1">Microeconomía Aplicada (ECO, 5 cr.)</li>
+        <li data-id="grn" data-prereq="micro1">Gestión de los Recursos Naturales (ECO, 4 cr.)</li>
+        <li data-id="funddh" data-prereq="filopoli der">Fundamentos Filosóficos de los Derechos Humanos (HUM, 4 cr.)</li>
+        <li data-id="metmix" data-prereq="invacad intro-pfe">Métodos Mixtos de Investigación para las CCSS (CCSS, 4 cr.)</li>
+      </ul>
+    </section>
+
+    <!-- CICLO 7 -->
+    <section class="ciclo" data-ciclo="7">
+      <h2>Ciclo 7</h2>
+      <ul>
+        <li data-id="comext" data-prereq="microapp">Teoría del Comercio Internacional (ECO, 4 cr.)</li>
+        <li data-id="proj" data-prereq="microapp">Diseño, Evaluación y Gestión de Proyectos (ECO, 5 cr.)</li>
+        <li class="grupo" data-group="pens-critico">
+          Curso 2 de Pensamiento Crítico (CCSS/HUM, 4 cr.)
+          <ul>
+            <li data-id="filo2">Filosofía</li>
+            <li data-id="teo2">Teología de las Religiones</li>
+            <li data-id="pens2">Pensamiento Social Contemporáneo</li>
+          </ul>
+        </li>
+        <li class="grupo" data-group="procesos-sociales" data-prereq="leng2">
+          Curso 2 del bloque Procesos Sociales (CCSS/HUM, 4 cr.)
+          <ul>
+            <li data-id="cpol2">Ciencia Política</li>
+            <li data-id="heemp2">Historia Económica y Empresarial</li>
+            <li data-id="hcrit2">Historia Crítica del Perú</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CICLO 8 -->
+    <section class="ciclo" data-ciclo="8">
+      <h2>Ciclo 8</h2>
+      <ul>
+        <li data-id="crec" data-prereq="macro">Crecimiento e Instituciones (ECO, 5 cr.)</li>
+        <li data-id="debpoldes">Debates sobre Política y Desarrollo (CCSS, 4 cr.)</li>
+        <li data-id="debfilo">Debates en Filosofía (HUM, 4 cr.)</li>
+        <li data-id="fundecon" data-prereq="funddh">Fundamentos Filosóficos de la Economía (HUM, 4 cr.)</li>
+      </ul>
+    </section>
+
+    <!-- CICLO 9 -->
+    <section class="ciclo" data-ciclo="9">
+      <h2>Ciclo 9</h2>
+      <ul>
+        <li data-id="histeco" data-prereq="crec">Historia del Pensamiento Económico (ECO, 4 cr.)</li>
+        <li data-id="proysoc">Proyección Social (CCSS, 4 cr.)</li>
+        <li data-id="etica">Ética (HUM, 4 cr.)</li>
+      </ul>
+    </section>
+
+    <!-- CICLO 10 -->
+    <section class="ciclo" data-ciclo="10">
+      <h2>Ciclo 10</h2>
+      <ul>
+        <li data-id="seminario" data-prereq="metmix">Seminario de Investigación Aplicada PPE (ECO, 2 cr.)</li>
+        <li class="grupo" data-group="desarrollo-personal">
+          Curso bloque Desarrollo Personal (ADM/HUM, 4 cr.)
+          <ul>
+            <li data-id="empren">Emprendimiento e Innovación</li>
+            <li data-id="liter">Literatura</li>
+            <li data-id="lider">Liderazgo</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
   </div>
   <script src="script.js"></script>
 </body>
